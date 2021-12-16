@@ -40,6 +40,7 @@ a, .btn {
   transition-duration: 200ms;
   -webkit-transition-property: color, border-color, background-color;
   transition-property: color, border-color, background-color;
+  text-decoration-line: none;
 }
 a:hover, a:focus {
   color: $accent-color-hover;
@@ -261,7 +262,7 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  background: url('../../img/heart-bg.png') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -288,6 +289,11 @@ Hero
   }
   .hero-content {
     padding-top: 40%;
+    font-family: $font-lovely;
+
+    .fa-heart {
+      color: red;
+    }
   }
   .hero-content img {
     width: 55%;
