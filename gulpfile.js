@@ -19,8 +19,10 @@ gulp.task('modules-css', function() {
 });
 
 gulp.task('modules-js', function() {
-    return gulp.src('node_modules/jquery/dist/jquery.min.js')
-        .pipe(gulp.dest('./dist/js/'));
+    return gulp.src([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/waypoints/lib/jquery.waypoints.min.js'
+    ]).pipe(gulp.dest('./dist/js/'));
 });
 
 
