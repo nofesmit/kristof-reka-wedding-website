@@ -5,12 +5,18 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
+
+gulp.task('icons', function() {
+    return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(gulp.dest('./dist/webfonts/'));
+});
+
 // compile scss to css
 gulp.task('sass', function () {
     return gulp.src('./sass/styles.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({basename: 'styles.min'}))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./dist/css'));
 });
 
 // watch changes in scss files and run sass task
@@ -27,4 +33,4 @@ gulp.task('minify-js', function () {
 });
 
 // default task
-gulp.task('default', gulp.series('sass', 'minify-js'));
+gulp.task('default', gulp.series('icons', 'sass', 'minify-js'));
