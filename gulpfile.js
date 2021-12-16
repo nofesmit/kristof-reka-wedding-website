@@ -1,5 +1,7 @@
 'use strict';
 
+var browserify = require('browserify');
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -16,6 +18,12 @@ gulp.task('modules-css', function() {
         .pipe(gulp.dest('./dist/css/'));
 });
 
+gulp.task('modules-js', function() {
+    return gulp.src('node_modules/jquery/dist/jquery.min.js')
+        .pipe(gulp.dest('./dist/js/'));
+});
+
+
 // compile scss to css
 gulp.task('sass', function () {
     return gulp.src('./sass/styles.scss')
@@ -31,6 +39,7 @@ gulp.task('sass:watch', function () {
 
 // minify js
 gulp.task('minify-js', function () {
+
     return gulp.src('./js/scripts.js')
         .pipe(uglify())
         .pipe(rename({basename: 'scripts.min'}))
@@ -38,4 +47,4 @@ gulp.task('minify-js', function () {
 });
 
 // default task
-gulp.task('default', gulp.series('modules-css', 'icons', 'sass', 'minify-js'));
+gulp.task('default', gulp.series('modules-js','modules-css', 'icons', 'sass', 'minify-js'));
