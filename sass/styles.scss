@@ -23,7 +23,7 @@ Global Styles
 .no-margin {
   margin: 0;
 }
-a {
+a, .btn {
   color: $accent-color;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
