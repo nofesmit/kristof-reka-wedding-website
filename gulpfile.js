@@ -11,6 +11,11 @@ gulp.task('icons', function() {
         .pipe(gulp.dest('./dist/webfonts/'));
 });
 
+gulp.task('modules-css', function() {
+    return gulp.src('node_modules/animate.css/animate.min.css')
+        .pipe(gulp.dest('./dist/css/'));
+});
+
 // compile scss to css
 gulp.task('sass', function () {
     return gulp.src('./sass/styles.scss')
@@ -33,4 +38,4 @@ gulp.task('minify-js', function () {
 });
 
 // default task
-gulp.task('default', gulp.series('icons', 'sass', 'minify-js'));
+gulp.task('default', gulp.series('modules-css', 'icons', 'sass', 'minify-js'));
