@@ -6,6 +6,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var watch = require('gulp-watch');
 
 
 gulp.task('icons', function() {
@@ -25,7 +26,6 @@ gulp.task('modules-js', function() {
     ]).pipe(gulp.dest('./dist/js/'));
 });
 
-
 // compile scss to css
 gulp.task('sass', function () {
     return gulp.src('./sass/styles.scss')
@@ -34,9 +34,8 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./dist/css'));
 });
 
-// watch changes in scss files and run sass task
-gulp.task('sass:watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
+gulp.task('watch', function () {
+    return watch('./sass/**/*.scss', gulp.series('sass'));
 });
 
 // minify js

@@ -1,7 +1,8 @@
 // Google Fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,300,400italic,300italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Parisienne:400,300,700);
 // Imports
 //@import "compass";
 @import "partials/typography";
@@ -260,26 +261,30 @@ Navigation
 /* ==========================================================================
 Hero
 ========================================================================== */
+.parallax {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .hero {
   min-height: 750px;
-  background: url('../../img/heart-bg.png') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+  background-image: url("../../img/hero.jpg");
 
-  /*.rsvp-btn {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-  }*/
   .down-arrow a {
     color: $txt-light;
   }
   h1 {
     color: $txt-light;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
+    font-size: 6rem;
   }
   p.intro {
     color: $txt-light;
@@ -288,7 +293,7 @@ Hero
     margin-bottom: 80px;
   }
   .hero-content {
-    padding-top: 40%;
+    padding-top: 30%;
     font-family: $font-lovely;
 
     .fa-heart {
@@ -300,25 +305,51 @@ Hero
     margin-bottom: 12%;
   }
 }
-.navigation {
+
+.location-card {
+  height: 400px;
+  overflow: hidden;
+  background-image: url("../../img/bagoly.png");
+  animation: location-animation 30s infinite;
+  background-position: 10% 80%;
+  background-size: 200vh;
+}
+
+.card-layout {
+  height: 100%;
+  background: rgba(53, 7, 7, 0.4);
+  background: rgba(149, 99, 99, 0.5);
+
+  h5 {
+    color: #fff;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 10px;
+  }
+
+}
+
+@keyframes location-animation {
+  0% {background-position: 10% 80%};
+  20% {background-position: 100% 40%;}
+  40% {background-position: center;}
+  60% {background-position: center left;}
+  90% {background-position: bottom right;}
+  100% {background-position: 10% 80%;}
+}
+
+nav {
   transition: all 300ms ease-in-out;
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-}
-.fixed {
-  position: fixed;
-  background-color: rgba(55, 36, 40, .88);
-  z-index: 999;
-  width: 100%;
-}
-header {
-  padding: 50px 0;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
-  position: relative;
-  width: 1170px;
-  margin: 0 auto;
-  transition: padding 300ms ease-in-out;
+
+  &.fixed {
+    background-color: rgba(36, 4, 17, .88);
+      .container {
+        border-bottom: none;
+        padding: 10px 0;
+        transition: padding 300ms ease-in-out;
+      }
+  }
 
   a {
     color: $txt-light;
@@ -329,6 +360,11 @@ header {
       margin-right: 20px;
     }
   }
+  .container {
+    padding: 35px 0;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  }
+
   .logo {
     display: inline-block;
   }
@@ -357,8 +393,6 @@ header {
   }
   ul.member-actions {
     li {
-      display: inline;
-
       a {
         color: $txt-light;
 
@@ -372,9 +406,7 @@ header {
     display: inline-block;
   }
   .member-actions {
-    position: absolute;
-    right: 0;
-    top: 41px;
+    align-items: center;
     transition: all 300ms ease-in-out;
   }
 }
@@ -659,6 +691,13 @@ Features-stack
   }
 }
 
+//music section
+.music-section {
+  h3 {
+    padding-bottom: 40px;
+  }
+}
+
 /* ==========================================================================
 Instagram
 ========================================================================== */
@@ -743,7 +782,7 @@ Embed video
 #video-bg {
   height: 300px;
 }
-#video-content {
+.card-layout {
   width: 100%;
   height: 100%;
   padding-top: 100px;
@@ -751,13 +790,13 @@ Embed video
   background: rgba(17, 17, 17, 0.5);
   text-align: center;
 }
-#video-content h5 {
+.card-layout h5 {
   color: #ffffff;
   font-size: 30px;
   font-weight: 300;
   letter-spacing: 10px;
 }
-#video-content p {
+.card-layout p {
   color: #ffffff;
 }
 

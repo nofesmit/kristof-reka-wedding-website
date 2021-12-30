@@ -3,15 +3,15 @@
 
 // Fonts
 
-$sans-serif: 'Open Sans', sans-serif;
-$serif: Merriweather, Georgia, 'Times New Roman', serif;
+$sans-serif:  'Montserrat', 'Open Sans', sans-serif;
+$serif: Georgia, 'Times New Roman', serif;
 $accent-font: 'Nunito', sans-serif;
 
 @font-face {
   font-family: 'Italianno';
   src: url("../../fonts/Italianno-Regular.ttf") format("truetype");
 }
-$font-lovely: 'Italianno', sans-serif;
+$font-lovely: 'Parisienne', 'Italianno', sans-serif;
 
 // Weights
 
@@ -24,8 +24,8 @@ $bold: 700;
 
 $font-size-h1: 3.75rem;
 $font-size-h2: 2.5rem;
-$font-size-h3: 1.5;
-$font-size-h4: 1.125;
+$font-size-h3: 1.5rem;
+$font-size-h4: 1.125rem;
 $font-size-h5: 1rem;
 $font-size-p: 1rem;
 $nav-font-size: 0.8rem;
@@ -63,7 +63,7 @@ h2 {
 
 h3 {
   color: $h3-color;
-  font-size: $font-size-h4;
+  font-size: $font-size-h3;
   font-weight: $bold;
   text-transform: uppercase;
   letter-spacing: 3px;
