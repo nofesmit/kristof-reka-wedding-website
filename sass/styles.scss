@@ -812,14 +812,26 @@ Google map
   margin-top: -502px;
   margin-bottom: 150px;
 }
-#map-content {
+#map-content, #map-car-content, #map-bus-content, #map-helicopter-content {
+  visibility: hidden;
+  opacity: 0;
   margin-top: 40px;
   padding: 50px 60px;
   background: #fff;
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
 }
-#btn-show-content {
+.h500 {
+  height: 500px;
+}
+
+#btn-show-info {
   padding: 20px;
   background: #fff;
   cursor: pointer;

@@ -246,13 +246,13 @@
         <div id="map-canvas"></div>
         <div id="map-content-wrapper" class="container pointer-events-none">
             <div class="row">
-                <div class="offset-xs-1 col-xs-10 offset-md-3 col-md-6 position-relative h500">
+                <div class="col-xs-offset-1 col-xs-10 offset-md-3 col-md-6">
                     <div class="text-center">
-                        <div id="btn-show-info" class="toggle-map-content pointer-events-auto">
+                        <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
                             <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Mutasd az infókat
                         </div>
                     </div>
-                    <div id="map-content" class="pointer-events-auto show position-absolute">
+                    <div id="map-content" class="pointer-events-auto">
                         <div class="row">
                             <div class="col-md-6">
                                 <h5>Bagolyvár étterem</h5>
@@ -264,63 +264,12 @@
                                     <i class="fa fa-mobile"></i> <a href="tel://+3644444444">+36 305555555</a></p>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 text-center" style="padding: 5px;">
+                        <div class="row text-center">
+                            <div class="col-md-6" style="padding: 5px;">
+                                <button type="button" class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map"></i>&nbsp;&nbsp;Mutasd a térképet</a>
+                            </div>
+                            <div class="col-md-6" style="padding: 5px;">
                                 <a class="btn btn-accent btn-small" href="https://g.page/Bagolyvarinarcs" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Google Maps</a>
-                            </div>
-                            <div class="col-md-6 text-center" style="padding: 5px;">
-                                <button class="btn btn-accent btn-small hide-map-card-button" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Kártya elrejtése</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="map-car-content" class="pointer-events-auto position-absolute">
-                        <div class="row">
-                            <div class="col-md-6 offset-md-1">
-                                <h5>M5 autópálya Inárcsi pihenőhely</h5>
-                                <p>Legegyszerűbb megközelítési lehetőség, fontos hogy nem kijárat, hanem pihenőhely, ahogyan a tábla is mutatja</p>
-                            </div>
-                            <div class="col-md-5">
-                               <p><img src="img/pihanohely.png" class="img-fluid" /></p>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 text-center" style="padding: 5px;">
-                                <a class="btn btn-accent btn-small" href="https://g.page/Bagolyvarinarcs" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Google Maps</a>
-                            </div>
-                            <div class="col-md-6 text-center" style="padding: 5px;">
-                                <button class="btn btn-accent btn-small hide-map-card-button" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Kártya elrejtése</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="map-bus-content" class="pointer-events-auto position-absolute">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h5>Busszal a népliget pályaudvarról</h5>
-                                <p>A népliget pályaudvaron a busz a 26-os kocsiállásról indul, a menetjegyet előre kell megvenni! Az első megállónál "inárcsi elágazás (M5-ös autópálya)" kell leszállni és 200 métert kell visszasétálni. Zebra sajnos nincs, óvatosan kelljetek át az úton!</p>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 text-center" style="padding: 5px;">
-                                <a class="btn btn-accent btn-small" href="https://goo.gl/maps/ohQNVjBG9RUmH9th6" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Google Maps</a>
-                            </div>
-                            <div class="col-md-6 text-center" style="padding: 5px;">
-                                <button class="btn btn-accent btn-small hide-map-card-button" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Kártya elrejtése</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="map-helicopter-content" class="pointer-events-auto position-absolute">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h5>Helicopterrel vagy bármilyen más eszközzel</h5>
-                                <p>Ha ilyen kemény és menő belépőt tervezel, kérlek jelezd előre! Mi is rajta szeretnénk akkor lenni, bármi is legyen az!!! Az lenne a legjobb ha közben ez a zene szólna: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="blank">Legjobb zene</a></p>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 text-center" style="padding: 5px;">
-                                <a class="btn btn-accent btn-small" href="https://g.page/Bagolyvarinarcs" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Google Maps</a>
-                            </div>
-                            <div class="col-md-6 text-center" style="padding: 5px;">
-                                <button class="btn btn-accent btn-small hide-map-card-button" target="blank"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Kártya elrejtése</a>
                             </div>
                         </div>
                     </div>
@@ -424,6 +373,6 @@
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuvTGkG3JA_l7sIg8NWrFybcmgYxGysTQ&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuvTGkG3JA_l7sIg8NWrFybcmgYxGysTQ&callback=initMap&library=places"></script>
 </body>
 </html>

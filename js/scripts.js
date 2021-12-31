@@ -125,16 +125,40 @@ $(document).ready(function () {
         });
     });
 
+    var cards = [ $('#map-car-content'),  $('#map-bus-content'), $('#map-content'), $('#map-helicopter-content')];
+    function hideAllcard() {
+        cards.map(function(card){
+            card.removeClass('show');
+        });
+    }
 
     /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+    $('#btn-show-car').click(function () {
+        hideAllcard();
+        $('#map-car-content').addClass('show');
+        $('#btn-show-info').removeClass('toggle-map-content');
     });
-    $('#btn-show-content').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+    $('#btn-show-bus').click(function () {
+        hideAllcard()
+        $('#map-bus-content').addClass('show');
+        $('#btn-show-info').removeClass('toggle-map-content');
     });
+    $('#btn-show-helicopter').click(function () {
+        hideAllcard()
+        $('#map-helicopter-content').addClass('show');
+        $('#btn-show-info').removeClass('toggle-map-content');
+    });
+    $('#btn-show-info').click(function () {
+        hideAllcard();
+        $('#map-content').addClass('show');
+        $('#btn-show-info').addClass('toggle-map-content');
+    });
+    $('.hide-map-card-button').click(function () {
+        hideAllcard();
+        $('#btn-show-info').remove('toggle-map-content');
+    });
+
+    
 
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
@@ -200,34 +224,47 @@ $(document).ready(function () {
 });
 
 /********************** Extras **********************/
+var carFromBpLayer, carKecskemetLayer, busStopMarker, map;
 
-// Google map
-function initMap() {
-    var location = {lat: 47.26752534042223, lng: 19.326378217216437};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
+function initroutes(){
+
+    map = new google.maps.Map(
+        document.getElementById("map-canvas"), {
+          center: new google.maps.LatLng(47.26752534042223, 19.326378217216437),
+          zoom: 17,
+          styles: [
+            {
+              featureType: "poi",
+              stylers: [
+               { visibility: "off" }
+              ]   
+             }
+         ]
+        });
+
+    var layer = new google.maps.KmlLayer({
+        url: "http://www.google.com/maps/d/kml?forcekml=1&mid=1-1qKsLPzOQnE7ypxN-d2eFCvSwvNElt3",
+        map: map,
+        preserveViewport: true,
+        suppressInfoWindows: true,
+      })
+
+    busStopMarker = new google.maps.Marker({
+        position: {lat:47.266564817461855, lng:19.324242639724826},
+        title: "Buszmegálló",
+        map: map
     });
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
+    new google.maps.Marker({
+        position: {lat:47.267270182228025, lng: 19.325614256717614},
+        title: "Esküvő",
+        map: map,
     });
 }
 
-function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
-    });
+// Google map
+function initMap() {
+    initroutes();
 }
 
 // alert_markup
