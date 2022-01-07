@@ -2,6 +2,8 @@
 
 $(document).ready(function () {
 
+    var invitationCode = ['ad9be0b5d43f9e2aba895f3ede723aa1', 'c5efe10ef922d575908700ec15d7517f'];
+
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {
@@ -199,8 +201,7 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'ad9be0b5d43f9e2aba895f3ede723aa1'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+        if (invitationCode.includes(MD5($('#invite_code').val()))) {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
             alert('jej');
@@ -219,6 +220,18 @@ $(document).ready(function () {
                     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
                 });
         }
+    });
+
+    /* 
+    *   Invitation code display friends or family form dpends on code
+    */
+    $('#invite_code').on('input', function(ev){
+        if(MD5(ev.target.value) === invitationCode[0]) {
+            // family
+            $('#family-form').show();
+        } else if (MD5(ev.target.value) === invitationCode[1]) {
+            $('#friends-form').show();
+        } 
     });
 
 });
