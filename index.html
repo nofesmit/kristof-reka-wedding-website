@@ -54,6 +54,9 @@
                                 <a  href="#esemenyek">Események</a>
                             </li>
                             <li class="nav-item">
+                                <a  href="#ajandek">Ajándék</a>
+                            </li>
+                            <li class="nav-item">
                                 <a  href="#zene">Zene</a>
                             </li>
                         </ul>
@@ -197,6 +200,17 @@
             </div>
         </div>
 
+    </section>
+
+    
+    <section id="ajandek" class="section-padding parallax house">
+        <div class="container">
+            <div class="col-md-12 parallax-card text-center">
+                <h3>Ajándék</h3>
+                <p class="">Életünkben elérkezett a pillanat, amikor már albérletünkből a saját álomházunkba költöznénk, így arra kérünk titeket, hogy dobozos ajándékok helyett ebben támogassatok minket</p>
+            </div>
+           
+        </div>
     </section>
 
     <section id="zene" class="section-padding music-section">
@@ -350,12 +364,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <h3>What are you waiting for?</h3>
-                    <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
-                    <form id="rsvp-form" class="rsvp-form"
+                    <h3>visszajelzés</h3>
+                    <p>Megköszönjük, hogyha Január 27-ig visszajelzel!</p>
+                    <form id="rsvp-form" class="rsvp-form gform"
                         action=""
                         method="POST">
                         <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-input-group">
+                                    <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                                                    class="" min="0"
+                                                                    placeholder="Meghívó kód"
+                                                                    required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="family-invation">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
                                     <i class="fa fa-envelope"></i><input type="email" name="email" class=""

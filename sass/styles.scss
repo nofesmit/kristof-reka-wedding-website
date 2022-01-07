@@ -266,7 +266,18 @@ Hero
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+}
+
+.house {
+  background-image: url("../../img/house.png");
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 120px;
 }
 
 .hero {
@@ -535,7 +546,17 @@ Features-stack
 .devices {
   position: relative;
 }
-
+/* ==========================================================================
+house
+========================================================================== */
+.parallax-card {
+  background-color: rgba(17, 17, 17, 0.6);
+  padding: 40px;
+  >* {
+    color: $white-color;
+  }
+}
+  
 /* ==========================================================================
 .features-extra
 ========================================================================== */
@@ -693,6 +714,7 @@ Features-stack
 
 //music section
 .music-section {
+  padding: 120px 0;
   h3 {
     padding-bottom: 40px;
   }
@@ -810,7 +832,6 @@ Google map
 #map-content-wrapper {
   position: relative;
   margin-top: -502px;
-  margin-bottom: 150px;
 }
 #map-content, #map-car-content, #map-bus-content, #map-helicopter-content {
   visibility: hidden;
