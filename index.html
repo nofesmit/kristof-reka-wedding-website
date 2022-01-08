@@ -363,6 +363,56 @@
             </div>
         </div>
 
+        <div id="datas-modal" class="modal fade" tabindex="-1" aria-hidden="true" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Miért kellenek ezek az adatok?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 fw-bold">
+                                    <p>email</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <p>Ide fogjuk elküldeni nektek az elkészült képeket, vagy keresünk fel titeket, ha valami esetleg változás történne</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 fw-bold">
+                                    <p>szállás</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <p>Január végéig vissza kell jeleznünk, hány szállásra van szükség. Ezek a szállások így olcsóbbak tudnak lenni.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-md-6 col-sm-6 fw-bold">
+                                    <p>fők száma</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <p>Tudni szeretnénk, hogy mennyien leszünk :) ennyi</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 fw-bold">
+                                    <p>gyerekek életkora</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <p>Az étel és italfogyasztás olcsóbb bizonyos életkor alatt, így nagyban segít számunkra, hogyha tudjuk, hány gyermek lesz az esküvőn</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-accent btn-small" data-bs-dismiss="modal">Bezárás</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -384,7 +434,13 @@
                             </div>
                         </div>
                         <div class="invitation-form" id="family-form">
-                            <div class="row" id="family-invation">
+                               
+                            <div class="row gap-2" id="family-invation">
+                                <div class="col-md-6 offset-md-3 ">
+                                    <button type="button" class="btn btn-accent btn-small" data-bs-toggle="modal" data-bs-target="#datas-modal">
+                                        Miért van szükség ezekre az adatokra?
+                                    </button>
+                                </div>
                                 <div class="col-md-12 col-sm-12">
                                     <div class="form-input-group">
                                         <i class="fa fa-envelope"></i><input type="email" name="email" class=""
@@ -400,7 +456,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row gap-2">
                                 <div class="col-md-12 col-sm-12 text-start">
                                     <div class="form-check-inline form-input-group ">
                                         <div class="col-md-6 col-sm-6">
@@ -444,7 +500,7 @@
                                 </div>
                             </div>
 
-                            <div class="row d-none" id="kids" >
+                            <div class="row d-none gap-2" id="kids" >
                                     <div class="col-md-3 col-sm-3">
                                         <div class="form-input-group">
                                         <input type="number" name="under_3" id="under_3" class="pure"
