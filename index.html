@@ -119,8 +119,8 @@
                 <div class="col-md-3 d-none d-md-block"><img src="img/jobbos.png" class="jobbos"></div>
             </div>
             <div class="row">
-                <div class="col-sm-4 col-sm-push-2 col-xs-6 d-md-none"><img src="img/balos.jpg" class="balos"></div>
-                <div class="col-sm-4 col-sm-push-2 col-xs-6 d-md-none"><img src="img/jobbos.jpg" class="jobbos"></div>
+                <div class="col-sm-4 offset-sm-1 col-xs-6 d-md-none"><img src="img/balos.png" class="balos"></div>
+                <div class="col-sm-4 offset-sm-1 col-xs-6 d-md-none"><img src="img/jobbos.png" class="jobbos"></div>
             </div>
         </div>
     </section>
@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="row section-padding">
-                <div class="col-md-4 offset-md-4 text-center">
+                <div class="col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 col-12 text-center">
                     <button type="button" class="btn btn-accent btn-small" data-bs-toggle="modal" data-bs-target="#dresscode-modal">
                         <i class="fa fa-tshirt"></i>&nbsp;&nbsp; Ezt a gombot nyomd meg, ha pánikba vagy esve, hogy mibe gyere!
                     </button>
@@ -242,18 +242,21 @@
     </section>
 
     <section class="section-padding">
-        <div class="container text-center">
+        <div class="container text-center mb-2">
             <h3>Hogyan jutok el a helszínre?</h3>
             <p>Szerencsére több lehetőseg is van, és mindegyik rendkívül egyszerű</p>
-            <div class="row justify-content-center">
-                <div class="col-md-2" style="padding: 5px;">
-                    <button type="button" class="btn btn-accent btn-small" id="btn-show-car"><i class="fa fa-car"></i>&nbsp;&nbsp;autóval</a>
-                </div>
-                <div class="col-md-2" style="padding: 5px;">
-                    <button type="button" class="btn btn-accent btn-small" id="btn-show-bus"><i class="fa fa-bus"></i>&nbsp;&nbsp;Busszal</a>
-                </div>
-                <div class="col-md-2" style="padding: 5px;">
-                    <button type="button" class="btn btn-accent btn-small" id="btn-show-helicopter"><i class="fa fa-helicopter"></i>&nbsp;&nbsp;helikopterrel</a>
+            <div class="col-12 col-lg-6 offset-lg-3">
+                <div class="row">
+
+                    <div class="col-12 col-md-4 mb-2" >
+                        <button type="button" class="btn btn-accent btn-small" id="btn-show-car"><i class="fa fa-car"></i>&nbsp;&nbsp;autóval</a>
+                    </div>
+                    <div class="col-12 col-md-4 mb-2" >
+                        <button type="button" class="btn btn-accent btn-small" id="btn-show-bus"><i class="fa fa-bus"></i>&nbsp;&nbsp;Busszal</a>
+                    </div>
+                    <div class="col-12 col-md-4 mb-2" >
+                        <button type="button" class="btn btn-accent btn-small" id="btn-show-helicopter"><i class="fa fa-helicopter"></i>&nbsp;&nbsp;helikopterrel</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -415,7 +418,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-lg-6 offset-lg-3">
                     <h3>visszajelzés</h3>
                     <h4>Január 27-ig várjuk a visszajelzéseket!</4>
                     <form id="rsvp-form" class="rsvp-form gform"
@@ -435,8 +438,8 @@
                         </div>
                         <div class="invitation-form" id="family-form">
                                
-                            <div class="row gap-2" id="family-invation">
-                                <div class="col-md-6 offset-md-3 ">
+                            <div class="row" id="family-invation">
+                                <div class="col-lg-6 offset-lg-3 col-12 mb-4">
                                     <button type="button" class="btn btn-accent btn-small" data-bs-toggle="modal" data-bs-target="#datas-modal">
                                         Miért van szükség ezekre az adatokra?
                                     </button>
@@ -456,43 +459,43 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row gap-2">
+                            <div class="row">
                                 <div class="col-md-12 col-sm-12 text-start">
                                     <div class="form-check-inline form-input-group ">
-                                        <div class="col-md-6 col-sm-6">
+                                        <div class="col-lg-6 col-8">
                                             <i class="fa fa-user-friends"></i><p><a href="#szallas">Önköltséges szállás</a></p>
                                         </div>
-                                        <div class="col-md-3 col-sm-3 bigtoggle">
+                                        <div class="col-lg-3 col-2 bigtoggle">
                                             <input type="radio" class="btn-check" name="need_room" id="need_room_yes" autocomplete="off" value="true" required>
                                             <label class="btn btn-toggle  btn-outline-primary" for="need_room_yes">Igen</label>
                                         </div>
-                                        <div  class="col-md-3 col-sm-3 bigtoggle">
-                                            <input type="radio" class="btn-check" id="need_room_yes" name="need_room" autocomplete="off" value="false">
-                                            <label class="btn btn-toggle  btn-outline-primary" for="need_room_yes">Nem</label>
+                                        <div  class="col-lg-3 col-2 bigtoggle">
+                                            <input type="radio" class="btn-check" id="need_room_no" name="need_room" autocomplete="off" value="false">
+                                            <label class="btn btn-toggle  btn-outline-primary" for="need_room_no">Nem</label>
                                         </div>
                                     </div>
                                     <div class="form-check-inline form-input-group ">
-                                        <div class="col-md-6 col-sm-6">
+                                        <div class="col-lg-6 col-8">
                                             <i class="fa fa-user-friends"></i><p class="">házastárs / élettárs / partner</p>
                                         </div>
-                                        <div class="col-md-3 col-sm-3 bigtoggle">
+                                        <div class="col-lg-3 col-2 bigtoggle">
                                             <input type="radio" class="btn-check" name="wife" id="wife_yes" autocomplete="off" value="true" required>
                                             <label class="btn btn-toggle  btn-outline-primary" for="wife_yes">Igen</label>
                                         </div>
-                                        <div  class="col-md-3 col-sm-3 bigtoggle">
+                                        <div  class="col-lg-3 col-2 bigtoggle">
                                             <input type="radio" class="btn-check" id="wife_no" name="wife" autocomplete="off" value="false">
                                             <label class="btn btn-toggle  btn-outline-primary" for="wife_no">Nem</label>
                                         </div>
                                     </div>
                                     <div class="form-check-inline form-input-group ">
-                                        <div class="col-md-6 col-sm-6">
+                                        <div class="col-lg-6 col-8">
                                             <i class="fa fa-user-friends"></i><p class="">gyermek</p>
                                         </div>
-                                        <div class="col-md-3 col-sm-3 bigtoggle">
+                                        <div class="col-lg-3 col-2 bigtoggle">
                                             <input type="radio" class="btn-check" name="has_kid" id="has_kid_yes" autocomplete="off" value="true" required>
                                             <label class="btn btn-toggle  btn-outline-primary" for="has_kid_yes">Igen</label>
                                         </div>
-                                        <div  class="col-md-3 col-sm-3 bigtoggle">
+                                        <div  class="col-lg-3 col-2 bigtoggle">
                                             <input type="radio" class="btn-check" id="has_kid_no" name="has_kid" autocomplete="off" value="false">
                                             <label class="btn btn-toggle  btn-outline-primary" for="has_kid_no">Nem</label>
                                         </div>
@@ -500,8 +503,8 @@
                                 </div>
                             </div>
 
-                            <div class="row d-none gap-2" id="kids" >
-                                    <div class="col-md-3 col-sm-3">
+                            <div class="row d-none" id="kids" >
+                                    <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
                                         <input type="number" name="under_3" id="under_3" class="pure"
                                                                             min="0" max="3"
@@ -509,7 +512,7 @@
                                                                             >
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-sm-3">
+                                    <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
                                             <input type="number" name="under_6" class="pure" min="0"
                                                                             max="3"
@@ -517,7 +520,7 @@
                                                                             >
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-sm-3">
+                                    <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
                                         <input type="number" name="under_18" class="pure" min="0"
                                                                             max="3"
@@ -525,7 +528,7 @@
                                                                             >
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-sm-3">
+                                    <div class="col-md-3 col-sm-3 col-6">
                                         <div class="form-input-group">
                                             <input type="number" name="over_18" class="pure" min="0"
                                                                             max="3"

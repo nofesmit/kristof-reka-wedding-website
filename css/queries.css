@@ -252,6 +252,15 @@
     }
 }
 
+@media screen and (max-width: 765px) {
+    #map-content-wrapper {
+    }
+
+    .h500 {
+        height: 650px;
+    }
+}
+
 @media screen and (max-width: 640px) {
     .hero .hero-content {
         padding-top: 100%;
