@@ -200,11 +200,10 @@ $(document).ready(function () {
         var data = $(this).serialize();
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-        if (invitationCode.includes(MD5($('#invite_code').val()))) {
+        console.log(MD5($('#invite_code').val()));
+        if (!invitationCode.includes(MD5($('#invite_code').val()))) {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            alert('jej');
             $.post('https://script.google.com/macros/s/AKfycbxiMkgvC_KGXCAK4wASYrXo0o9ecZDjmYteBpa4U0xLwvQElXI/exec', data)
                 .done(function (data) {
                     console.log(data);
@@ -232,6 +231,14 @@ $(document).ready(function () {
         } else if (MD5(ev.target.value) === invitationCode[1]) {
             $('#friends-form').show();
         } 
+    });
+
+    $('#has_kid_yes').on('input', function(ev) {
+       $('#kids').removeClass('d-none');
+    });
+
+    $('#has_kid_no').on('input', function(ev) {
+       $('#kids').addClass('d-none'); 
     });
 
 });

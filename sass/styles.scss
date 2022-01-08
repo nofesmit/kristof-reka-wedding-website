@@ -880,12 +880,18 @@ RSVP form
 .rsvp {
   padding-bottom: 140px;
   .rsvp-form {
+    padding-top: 40px;
     .rsvp-btn {
       padding: 15px 0;
       border-radius: 3px;
       width: 100%;
       font-size: 13px;
     }
+    .form-check-inline {
+      display: flex;
+      align-items: center;
+    }
+
     .form-input-group {
       width: 100%;
       height: 55px;
@@ -911,21 +917,62 @@ RSVP form
         left: 30px;
         transform: translateY(-50%);
       }
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key {
+      i.fa-user, i.fa-users, i.fa-envelope, .fa-key, .fa-user-friends {
         font-size: 14px;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         margin-left: 20px;
       }
-      input {
+
+      p {
+        height: auto;
+        width: auto;
+        padding-bottom: 0;
+        margin: 0 20px 0 0;
+      }
+
+      .btn-check:checked+.btn-outline-primary {
+        background-color: $accent-color;
+        border-color: $accent-color-hover;
+      }
+
+      .bigtoggle {
+        align-self: stretch;
+        label {
+          width: 100%;
+          height: 100%;
+          -moz-border-radius: 0;
+          -webkit-border-radius: 0;
+          border-radius: 0;
+          margin: auto;
+          padding: unset;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        & ~ .bigtoggle label{
+          border-left:none;
+        }
+        
+      }
+      
+      p, input {
         padding-left: 68px;
+      }
+
+      input {
         width: 100%;
         height: 100%;
         -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
+        
+        &.pure {
+          padding-left: 15px;
+        }
       }
       input::-webkit-input-placeholder {
         color: $form-placeholder;
@@ -991,6 +1038,14 @@ body.modal-open {
 }
 .modal-body {
   padding:25px;
+}
+
+.btn-check:active+.btn-outline-primary:focus, .btn-check:checked+.btn-outline-primary:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus, .btn-outline-primary:active:focus, .btn-check:focus+.btn, .btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(211, 137, 28,.37);
+}
+.btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+  background-color: $accent-color;
+  border-color: $accent-color;
 }
 
 .invitation-form {

@@ -130,6 +130,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3 class="header">A nagy nap eseményei</h3>
+                    <h6>a Jelenlegi lista csak tájékoztató jellegű, a végleges eseménylista 2 hónappal az esküvő elött várható!</h6>
                     <p class="text-">Nem szeretnénk zsábmacskát árulni, hogy mi mikor lesz. Az egész nap alig 100 lépésnyire fog lezajalni, tehát nem kell aggódni, nagy séták nem lesznek!</p>
                 </div>
             </div>
@@ -183,7 +184,7 @@
             </div>
         </div>
 
-        <div id="dresscode-modal" class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true" >
+        <div id="dresscode-modal" class="modal fade" tabindex="-1" aria-hidden="true" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -345,27 +346,28 @@
 
     <section class="rsvp text-center section-padding" id="rsvp">
 
-        <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+        <div id="rsvp-modal" class="modal fade" tabindex="-1" aria-hidden="true" >
+            <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                        </button>
-                        <div class="section-padding">
-                            <h3>Thank you!</h3>
-                            <p>We are glad to see you join us on our big day.</p>
-                            <div id="add-to-cal"></div>
-                        </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title">Köszönjük a visszajelzést!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+                    <div class="modal-body">
+                        <p>Örülünk, hogy úgy döntöttél velünk tartasz! Keress minket bátran ha bármilyen kérdésed felmerülne!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-accent btn-small" data-bs-dismiss="modal">Bezárás</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <h3>visszajelzés</h3>
-                    <p>Megköszönjük, hogyha Január 27-ig visszajelzel!</p>
+                    <h4>Január 27-ig várjuk a visszajelzéseket!</4>
                     <form id="rsvp-form" class="rsvp-form gform"
                         action=""
                         method="POST">
@@ -383,14 +385,14 @@
                         </div>
                         <div class="invitation-form" id="family-form">
                             <div class="row" id="family-invation">
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-md-12 col-sm-12">
                                     <div class="form-input-group">
                                         <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                            placeholder="Email cím"
+                                                                            placeholder="Email cím" required
                                                                             >
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-md-12 col-sm-12">
                                     <div class="form-input-group">
                                         <i class="fa fa-user"></i><input name="name" class=""
                                                                         placeholder="teljes név"
@@ -399,29 +401,88 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                        max="4"
-                                                                        placeholder="Husband/Wife or kids"
-                                                                        required>
+                                <div class="col-md-12 col-sm-12 text-start">
+                                    <div class="form-check-inline form-input-group ">
+                                        <div class="col-md-6 col-sm-6">
+                                            <i class="fa fa-user-friends"></i><p><a href="#szallas">Önköltséges szállás</a></p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 bigtoggle">
+                                            <input type="radio" class="btn-check" name="need_room" id="need_room_yes" autocomplete="off" value="true" required>
+                                            <label class="btn btn-toggle  btn-outline-primary" for="need_room_yes">Igen</label>
+                                        </div>
+                                        <div  class="col-md-3 col-sm-3 bigtoggle">
+                                            <input type="radio" class="btn-check" id="need_room_yes" name="need_room" autocomplete="off" value="false">
+                                            <label class="btn btn-toggle  btn-outline-primary" for="need_room_yes">Nem</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check-inline form-input-group ">
+                                        <div class="col-md-6 col-sm-6">
+                                            <i class="fa fa-user-friends"></i><p class="">házastárs / élettárs / partner</p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 bigtoggle">
+                                            <input type="radio" class="btn-check" name="wife" id="wife_yes" autocomplete="off" value="true" required>
+                                            <label class="btn btn-toggle  btn-outline-primary" for="wife_yes">Igen</label>
+                                        </div>
+                                        <div  class="col-md-3 col-sm-3 bigtoggle">
+                                            <input type="radio" class="btn-check" id="wife_no" name="wife" autocomplete="off" value="false">
+                                            <label class="btn btn-toggle  btn-outline-primary" for="wife_no">Nem</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check-inline form-input-group ">
+                                        <div class="col-md-6 col-sm-6">
+                                            <i class="fa fa-user-friends"></i><p class="">gyermek</p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 bigtoggle">
+                                            <input type="radio" class="btn-check" name="has_kid" id="has_kid_yes" autocomplete="off" value="true" required>
+                                            <label class="btn btn-toggle  btn-outline-primary" for="has_kid_yes">Igen</label>
+                                        </div>
+                                        <div  class="col-md-3 col-sm-3 bigtoggle">
+                                            <input type="radio" class="btn-check" id="has_kid_no" name="has_kid" autocomplete="off" value="false">
+                                            <label class="btn btn-toggle  btn-outline-primary" for="has_kid_no">Nem</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-input-group">
-                                        <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                        class="" min="0"
-                                                                        placeholder="Meghívó kód"
-                                                                        required>
+                            </div>
+
+                            <div class="row d-none" id="kids" >
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="form-input-group">
+                                        <input type="number" name="under_3" id="under_3" class="pure"
+                                                                            min="0" max="3"
+                                                                            placeholder="3 év alatt"
+                                                                            >
+                                        </div>
                                     </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="form-input-group">
+                                            <input type="number" name="under_6" class="pure" min="0"
+                                                                            max="3"
+                                                                            placeholder="6 év alatt"
+                                                                            >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="form-input-group">
+                                        <input type="number" name="under_18" class="pure" min="0"
+                                                                            max="3"
+                                                                            placeholder="18 év alatt"
+                                                                            >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="form-input-group">
+                                            <input type="number" name="over_18" class="pure" min="0"
+                                                                            max="3"
+                                                                            placeholder="18 év feletti"
+                                                                            >
+                                        </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12" id="alert-wrapper"></div>
                             </div>
                             <button class="btn-fill rsvp-btn">
-                                Yes,
-                                that's me!
+                                Ezek az adataim, elküldöm!
                             </button>
                         </div>
                         <div class="invitation-form" id="friends-form">

@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
+var browsersync = require('browser-sync').create();
 
 
 gulp.task('icons', function() {
@@ -34,9 +35,24 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('watch', function () {
-    return watch(['./sass/**/*.scss', './js/**/*.js', '!./js/scripts.min.js'], gulp.series('sass', 'minify-js'));
+gulp.task('browsersyncServe',function browsersyncServe(cb){
+    browsersync.init({
+        server: {
+        baseDir: '.'
+        }    
+    });
+    cb();
 });
+
+gulp.task('browsersyncReload', function browsersyncReload(cb){
+browsersync.reload();
+cb();
+});
+
+
+gulp.task('watch',
+    gulp.series('browsersyncServe', () => watch(['./sass/**/*.scss', './js/**/*.js', '!./js/scripts.min.js'], gulp.series('sass', 'minify-js', 'browsersyncReload')))
+);
 
 // minify js
 gulp.task('minify-js', function () {
@@ -46,6 +62,7 @@ gulp.task('minify-js', function () {
         .pipe(rename({basename: 'scripts.min'}))
         .pipe(gulp.dest('./js'));
 });
+
 
 // default task
 gulp.task('default', gulp.series('modules-js','modules-css', 'icons', 'sass', 'minify-js'));
