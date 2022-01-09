@@ -135,26 +135,26 @@ $(document).ready(function () {
     }
 
     /********************** Toggle Map Content **********************/
-    $('#btn-show-car').click(function () {
-        hideAllcard();
-        $('#map-car-content').addClass('show');
-        $('#btn-show-info').removeClass('toggle-map-content');
-    });
-    $('#btn-show-bus').click(function () {
-        hideAllcard()
-        $('#map-bus-content').addClass('show');
-        $('#btn-show-info').removeClass('toggle-map-content');
-    });
-    $('#btn-show-helicopter').click(function () {
-        hideAllcard()
-        $('#map-helicopter-content').addClass('show');
-        $('#btn-show-info').removeClass('toggle-map-content');
-    });
-    $('#btn-show-info').click(function () {
-        hideAllcard();
-        $('#map-content').addClass('show');
-        $('#btn-show-info').addClass('toggle-map-content');
-    });
+    // $('#btn-show-car').click(function () {
+    //     hideAllcard();
+    //     $('#map-car-content').addClass('show');
+    //     $('#btn-show-info').removeClass('toggle-map-content');
+    // });
+    // $('#btn-show-bus').click(function () {
+    //     hideAllcard()
+    //     $('#map-bus-content').addClass('show');
+    //     $('#btn-show-info').removeClass('toggle-map-content');
+    // });
+    // $('#btn-show-helicopter').click(function () {
+    //     hideAllcard()
+    //     $('#map-helicopter-content').addClass('show');
+    //     $('#btn-show-info').removeClass('toggle-map-content');
+    // });
+    // $('#btn-show-info').click(function () {
+    //     hideAllcard();
+    //     $('#map-content').addClass('show');
+    //     $('#btn-show-info').addClass('toggle-map-content');
+    // });
     $('.hide-map-card-button').click(function () {
         hideAllcard();
         $('#btn-show-info').remove('toggle-map-content');

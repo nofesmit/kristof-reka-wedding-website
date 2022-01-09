@@ -265,9 +265,6 @@
         border-radius: 0;
     }
 
-    #map-content-wrapper {
-        margin-bottom: 40px;
-    }
     
     #map-content {
         margin-top: 0;
@@ -285,13 +282,19 @@
     footer .footer-links {
         margin: 120px 0 120px 0;
     }
+
+    #map-canvas {
+        height: 650px;
+    }
+
+    #map-content-wrapper {
+        margin-top: -652px;
+    }
 }
 
 @media screen and (max-width: 765px) {
 
-    .h500 {
-        height: 650px;
-    }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -307,10 +310,6 @@
         top: 10px;
         right: 10px; }
 
-    #map-content-wrapper {
-        margin-bottom: 0;
-    }
-    
     footer ul.footer-group {
         border-top: none;
     }

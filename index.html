@@ -250,13 +250,13 @@
             <div class="col-12 col-lg-6 offset-lg-3">
                 <div class="row">
                     <div class="col-12 col-md-4 mb-2" >
-                        <button type="button" class="btn btn-accent btn-small" id="btn-show-car"><i class="fa fa-car"></i>&nbsp;&nbsp;autóval</a>
+                        <button type="button" class="btn btn-accent btn-small" data-bs-toggle="collapse"  data-bs-target="#map-car-content" id="btn-show-car"><i class="fa fa-car"></i>&nbsp;&nbsp;autóval</a>
                     </div>
                     <div class="col-12 col-md-4 mb-2" >
-                        <button type="button" class="btn btn-accent btn-small" id="btn-show-bus"><i class="fa fa-bus"></i>&nbsp;&nbsp;Busszal</a>
+                        <button type="button" class="btn btn-accent btn-small"  data-bs-toggle="collapse"  data-bs-target="#map-bus-content" id="btn-show-bus"><i class="fa fa-bus"></i>&nbsp;&nbsp;Busszal</a>
                     </div>
                     <div class="col-12 col-md-4 mb-2" >
-                        <button type="button" class="btn btn-accent btn-small" id="btn-show-helicopter"><i class="fa fa-helicopter"></i>&nbsp;&nbsp;helikopterrel</a>
+                        <button type="button" class="btn btn-accent btn-small"  data-bs-toggle="collapse" data-bs-target="#map-helicopter-content" id="btn-show-helicopter"><i class="fa fa-helicopter"></i>&nbsp;&nbsp;helikopterrel</a>
                     </div>
                 </div>
             </div>
@@ -265,13 +265,13 @@
         <div id="map-canvas"></div>
         <div id="map-content-wrapper" class="container pointer-events-none">
             <div class="row">
-                <div class="offset-1 col-10 offset-md-3 col-md-6 position-relative h500">
+                <div class="col-ms-12 offset-lg-3 col-lg-6 position-relative h500" id="map-content-lofasz">
                     <div class="text-center">
                         <div id="btn-show-info" class="toggle-map-content pointer-events-auto">
                             <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Mutasd az infókat
                         </div>
-                    </div>
-                    <div id="map-content" class="pointer-events-auto show position-absolute">
+                    </div> 
+                    <div id="map-content" class="pointer-events-auto collapse show position-absolute"  data-bs-parent="#map-content-lofasz">
                         <div class="row">
                             <div class="col-md-6">
                                 <h5>Bagolyvár étterem</h5>
@@ -292,13 +292,13 @@
                             </div>
                         </div>
                     </div>
-                    <div id="map-car-content" class="pointer-events-auto position-absolute">
+                    <div id="map-car-content" class="pointer-events-auto collapse indent position-absolute"  data-bs-parent="#map-content-lofasz">
                         <div class="row">
                             <div class="col-md-6 offset-md-1">
                                 <h5>M5 autópálya Inárcsi pihenőhely</h5>
                                 <p>Legegyszerűbb megközelítési lehetőség, fontos hogy nem kijárat, hanem pihenőhely, ahogyan a tábla is mutatja</p>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-lg-5 col-6">
                                <p><img src="img/pihanohely.png" class="img-fluid" /></p>
                             </div>
                         </div>
@@ -311,7 +311,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="map-bus-content" class="pointer-events-auto position-absolute">
+                    <div id="map-bus-content" class="pointer-events-auto collapse indent position-absolute"  data-bs-parent="#map-content-lofasz">
                         <div class="row">
                             <div class="col-md-12">
                                 <h5>Busszal a népliget pályaudvarról</h5>
@@ -327,7 +327,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="map-helicopter-content" class="pointer-events-auto position-absolute">
+                    <div id="map-helicopter-content" class="pointer-events-auto collapse position-absolute"  data-bs-parent="#map-content-lofasz">
                         <div class="row">
                             <div class="col-md-12">
                                 <h5>Helicopterrel vagy bármilyen más eszközzel</h5>
