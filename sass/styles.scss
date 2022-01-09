@@ -879,7 +879,7 @@ RSVP form
 ========================================================================== */
 .rsvp {
   padding-bottom: 140px;
-  .rsvp-form {
+  .rsvp-form, .szallas-form {
     padding-top: 40px;
     .rsvp-btn {
       padding: 15px 0;
@@ -917,7 +917,7 @@ RSVP form
         left: 30px;
         transform: translateY(-50%);
       }
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key, .fa-user-friends {
+      i.fa-user, i.fa-users, i.fa-envelope, .fa-key, .fa-user-friends, .fa-baby, .fa-child, .fa-phone {
         font-size: 14px;
         position: absolute;
         top: 50%;
@@ -939,6 +939,7 @@ RSVP form
 
       .bigtoggle {
         align-self: stretch;
+        padding-left: calc(var(--bs-gutter-x) * .5);
         label {
           width: 100%;
           height: 100%;
@@ -952,8 +953,11 @@ RSVP form
           justify-content: center;
         }
 
-        & ~ .bigtoggle label{
-          border-left:none;
+        & ~ .bigtoggle  {
+          padding-left: 0;
+          label {
+            border-left:none;
+          } 
         }
         
       }

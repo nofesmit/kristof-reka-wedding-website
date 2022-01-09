@@ -195,28 +195,28 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
+    $('#rsvp-form, #room-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
+        $('.alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
         console.log(MD5($('#invite_code').val()));
-        if (!invitationCode.includes(MD5($('#invite_code').val()))) {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Bocsi!</strong> Nem jó a meghívó kód.'));
+        if (!invitationCode.includes(MD5($(e.target).find('[name=invite_code]').val()))) {
+            $('.alert-wrapper').html(alert_markup('danger', '<strong>Bocsi!</strong> Nem jó a meghívó kód.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbxiMkgvC_KGXCAK4wASYrXo0o9ecZDjmYteBpa4U0xLwvQElXI/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
+                        $('.alert-wrapper').html(alert_markup('danger', data.message));
                     } else {
-                        $('#alert-wrapper').html('');
+                        $('.alert-wrapper').html('');
                         $('#rsvp-modal').modal('show');
                     }
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Ajaja!</strong> Valami olyan történt, amire senki sem számított, kérlek próbáld meg egy kicsit később '));
+                    $('.alert-wrapper').html(alert_markup('danger', '<strong>Ajaja!</strong> Valami olyan történt, amire senki sem számított, kérlek próbáld meg egy kicsit később '));
                 });
         }
     });
@@ -240,6 +240,28 @@ $(document).ready(function () {
 
     $('#has_kid_no').on('input', function(ev) {
        $('#kids').addClass('d-none'); 
+    });
+
+    $('#room_has_kid_yes').on('input', function(ev) {
+        $('#room_kids').removeClass('d-none');
+     });
+ 
+     $('#room_has_kid_no').on('input', function(ev) {
+        $('#room_kids').addClass('d-none'); 
+     });
+
+    /**
+     * 
+     * room
+     */
+     $('#invite_code_for_room').on('input', function(ev){
+        if(MD5(ev.target.value) === invitationCode[0]) {
+            // family
+            $('#room-form-content').removeClass('d-none');
+        } else if (MD5(ev.target.value) === invitationCode[1]) {
+            $('#room-form-content').removeClass('d-none');
+            $('#room-plus-one-text').html('+1 fő');
+        } 
     });
 
 });
