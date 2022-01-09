@@ -229,7 +229,8 @@ $(document).ready(function () {
             // family
             $('#family-form').show();
         } else if (MD5(ev.target.value) === invitationCode[1]) {
-            $('#friends-form').show();
+            $('#family-form').show();
+            $('#plus-one-text').html('+1 fő');
         } 
     });
 
