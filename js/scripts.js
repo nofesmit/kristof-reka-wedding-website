@@ -199,10 +199,10 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Csak egy pillanat!</strong> Adatok mentése folyamatban.'));
         console.log(MD5($('#invite_code').val()));
         if (!invitationCode.includes(MD5($('#invite_code').val()))) {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Bocsi!</strong> Nem jó a meghívó kód.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbxiMkgvC_KGXCAK4wASYrXo0o9ecZDjmYteBpa4U0xLwvQElXI/exec', data)
                 .done(function (data) {
@@ -216,7 +216,7 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Ajaja!</strong> Valami olyan történt, amire senki sem számított, kérlek próbáld meg egy kicsit később '));
                 });
         }
     });

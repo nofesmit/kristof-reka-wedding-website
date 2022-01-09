@@ -1042,10 +1042,18 @@ body.modal-open {
 
 .btn-check:active+.btn-outline-primary:focus, .btn-check:checked+.btn-outline-primary:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus, .btn-outline-primary:active:focus, .btn-check:focus+.btn, .btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(211, 137, 28,.37);
+
+  .fa-check {
+    color: #fff;
+  }
 }
 .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
   background-color: $accent-color;
   border-color: $accent-color;
+
+  .fa-check {
+    color: #fff;
+  }
 }
 
 .invitation-form {
