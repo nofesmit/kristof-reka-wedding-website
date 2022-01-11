@@ -5,7 +5,10 @@ A beautiful, feature rich, device friendly wedding website forked from `rampatra
 - using npm and gulp to copy some vendor resources
 - update bootstrap to 5 
 - latest jquery from npm
-- npm not used and commited
+- npm_modules not used in production and not commited
+
+# TODO
+- remove unused CSS and scripts, from project and from package.json
 
 
 # Getting Started
