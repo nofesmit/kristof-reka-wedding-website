@@ -281,13 +281,14 @@ Hero
 }
 
 .hero {
-  min-height: 750px;
+  min-height: 500px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
   background-image: url("../../img/hero.jpg");
+  height: 100vh;
 
   .down-arrow a {
     color: $txt-light;

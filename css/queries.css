@@ -13,7 +13,11 @@
 
 @media screen and (max-width: 1024px) {
     .hero .hero-content {
-        padding-top: 50%;
+        padding-top: 40%;
+    }
+
+    .navbar-toggler, .logo {
+        margin: 0 20px;
     }
 }
 
@@ -23,10 +27,6 @@
         width: 90%;
         padding-left: 25px;
     } */
-
-    .hero .hero-content {
-        padding-top: 50%;
-    }
 
     /* .header-nav {
         position: fixed;
@@ -282,14 +282,6 @@
     footer .footer-links {
         margin: 120px 0 120px 0;
     }
-
-    #map-canvas {
-        height: 650px;
-    }
-
-    #map-content-wrapper {
-        margin-top: -652px;
-    }
 }
 
 @media screen and (max-width: 765px) {
@@ -298,10 +290,6 @@
 }
 
 @media screen and (max-width: 640px) {
-    .hero .hero-content {
-        padding-top: 100%;
-    }
-
     #eng-pics .img-wrap i {
         font-size: 25px;
         position: absolute;
@@ -328,6 +316,15 @@
 
     footer .footer-links {
         margin: 50px 0 50px 0;
+    }
+
+    #map-canvas {
+        height: 700px;
+    }
+
+    #map-content-wrapper {
+        margin-top: -700px;
+        margin-bottom: 200px;
     }
 
 }
