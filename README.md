@@ -17,6 +17,10 @@ A beautiful, feature rich, device friendly wedding website forked from `rampatra
 3. `$ gulp` - compile sass to css, minify js, etc. _(optional)_
 4. That's it, open `index.html` on your browser by just double-clicking on the file.
 
+
+# Development
+- `$ gulp watch` -> serve content on localhost:3000, so you can check google maps. Also autoreloading on css and js modification.
+
 # Free to use
 Feel free to use / fork under GNU GENERAL PUBLIC LICENSE
 
