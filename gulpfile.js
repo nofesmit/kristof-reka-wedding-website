@@ -3,7 +3,7 @@
 var browserify = require('browserify');
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
