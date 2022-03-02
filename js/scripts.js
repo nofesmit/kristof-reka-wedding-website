@@ -151,7 +151,7 @@ $(document).ready(function () {
         if (!invitationCode.includes(MD5($(e.target).find('[name=invite_code]').val()))) {
             $('.alert-wrapper').html(alert_markup('danger', '<strong>Bocsi!</strong> Nem jó a meghívó kód.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbxSIgnq86ZaNEw4QHyOOkBvuGmZssQ5MIZIGluARp8azjcczpri6ztv4BFsXuDBsVio/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbxMz6EF68VTfYBEkqP4QL_aathIpNbRDiIGBxggnqIiV2OQPBuJzxrknDXaPE6bt3YRFQ/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
